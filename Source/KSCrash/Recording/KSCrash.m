@@ -550,6 +550,7 @@ SYNTHESIZE_CRASH_STATE_PROPERTY(BOOL, crashedLastLaunch)
         NSDictionary* report = [self reportWithIntID:reportIDs[i]];
         if(report != nil)
         {
+            [report setValue:@(reportIDs[i]) forKey:@"reportId"];
             [reports addObject:report];
         }
     }
