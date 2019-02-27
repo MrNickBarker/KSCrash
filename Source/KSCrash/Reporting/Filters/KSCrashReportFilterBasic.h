@@ -60,6 +60,15 @@
 
 /** Initializer.
  *
+ * @param filters An array of filters.
+ *                Each "filter" can be id<KSCrashReportFilter> or an NSArray
+ *                of filters (which gets wrapped in a pipeline filter).
+ * @param keys An array of keys, for the passed filters.
+ */
+- (id) initWithFilters:(NSArray*) filters keys:(NSArray*) keys;
+
+/** Initializer.
+ *
  * @param firstFilter The first filter, followed by key, filter, key, ...
  *                    Each "filter" can be id<KSCrashReportFilter> or an NSArray
  *                    of filters (which gets wrapped in a pipeline filter).
@@ -85,6 +94,12 @@
  * @param firstFilter The first filter, followed by filter, filter, ...
  */
 + (KSCrashReportFilterPipeline*) filterWithFilters:(id) firstFilter, ... NS_REQUIRES_NIL_TERMINATION;
+
+/** Initializer.
+ *
+ * @param filters An array of filters.
+ */
+- (id) initWithFiltersArray:(NSArray*) filters;
 
 /** Initializer.
  *
