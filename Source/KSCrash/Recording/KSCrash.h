@@ -221,7 +221,7 @@ typedef enum
 
 /** Get the singleton instance of the crash reporter.
  */
-+ (KSCrash*) sharedInstance;
++ (nonnull KSCrash*) sharedInstance;
 
 /** Install the crash reporter.
  * The reporter will record crashes, but will not send any crash reports unless
